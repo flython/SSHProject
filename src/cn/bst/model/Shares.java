@@ -2,84 +2,132 @@ package cn.bst.model;
 
 import java.sql.Timestamp;
 
+
 /**
  * Shares entity. @author MyEclipse Persistence Tools
  */
 
-public class Shares implements java.io.Serializable {
+public class Shares  implements java.io.Serializable {
 
-	// Fields
 
-	private Integer id;
-	private String photo;
-	private String title;
-	private String tag;
-	private String userAccount;
-	private Timestamp shareTime;
+    // Fields    
 
-	// Constructors
+     private Integer id;
+     private String title;
+     private String shearImage;
+     private String content;
+     private Integer masterId;
+     private String tagArray;
+     private Timestamp shareTime;
+     private Integer replysCount;
+     private Integer likeCount;
 
-	/** default constructor */
-	public Shares() {
-	}
 
-	/** full constructor */
-	public Shares(String photo, String title, String tag, String userAccount, Timestamp shareTime) {
-		this.photo = photo;
-		this.title = title;
-		this.tag = tag;
-		this.userAccount = userAccount;
-		this.shareTime = shareTime;
-	}
+    // Constructors
 
-	// Property accessors
+    /** default constructor */
+    public Shares() {
+    }
 
-	public Integer getId() {
-		return this.id;
-	}
+	/** minimal constructor */
+    public Shares(String title, Integer masterId) {
+        this.title = title;
+        this.masterId = masterId;
+    }
+    
+    /** full constructor */
+    public Shares(String title, String shearImage, String content, Integer masterId, String tagArray, Timestamp shareTime, Integer replysCount, Integer likeCount) {
+        this.title = title;
+        this.shearImage = shearImage;
+        this.content = content;
+        this.masterId = masterId;
+        this.tagArray = tagArray;
+        this.shareTime = shareTime;
+        this.replysCount = replysCount;
+        this.likeCount = likeCount;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+   
+    // Property accessors
 
-	public String getPhoto() {
-		return this.photo;
-	}
+    public Integer getId() {
+        return this.id;
+    }
+    
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
+    public String getTitle() {
+        return this.title;
+    }
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getTitle() {
-		return this.title;
-	}
+    public String getShearImage() {
+        return this.shearImage;
+    }
+    
+    public void setShearImage(String shearImage) {
+        this.shearImage = shearImage;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getContent() {
+        return this.content;
+    }
+    
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public String getTag() {
-		return this.tag;
-	}
+    public Integer getMasterId() {
+        return this.masterId;
+    }
+    
+    public void setMasterId(Integer masterId) {
+        this.masterId = masterId;
+    }
 
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
+    public String getTagArray() {
+        return this.tagArray;
+    }
+    
+    public void setTagArray(String tagArray) {
+        this.tagArray = tagArray;
+    }
 
-	public String getUserAccount() {
-		return this.userAccount;
-	}
+    public Timestamp getShareTime() {
+        return this.shareTime;
+    }
+    
+    public void setShareTime(Timestamp shareTime) {
+        this.shareTime = shareTime;
+    }
 
-	public void setUserAccount(String userAccount) {
-		this.userAccount = userAccount;
-	}
+    public Integer getReplysCount() {
+        return this.replysCount;
+    }
+    
+    public void setReplysCount(Integer replysCount) {
+        this.replysCount = replysCount;
+    }
 
-	public Timestamp getShareTime() {
-		return this.shareTime;
-	}
+    public Integer getLikeCount() {
+        return this.likeCount;
+    }
+    
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
+   
 
-	public void setShareTime(Timestamp shareTime) {
-		this.shareTime = shareTime;
-	}
+
+
+
+
+
+
 
 }

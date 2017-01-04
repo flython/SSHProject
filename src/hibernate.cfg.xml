@@ -10,10 +10,10 @@
 		<property name="dialect">
 			org.hibernate.dialect.MySQLDialect
 		</property>
-		<property name="connection.password">MySQL</property>
+		<property name="connection.password">adminFly</property>
 		<property name="connection.username">root</property>
 		<property name="connection.url">
-			jdbc:mysql://localhost:3306/mydb
+			jdbc:mysql://localhost:3306/
 		</property>
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
@@ -21,6 +21,8 @@
 		<mapping resource="cn/bst/model/Users.hbm.xml" />
 		<mapping resource="cn/bst/model/Shares.hbm.xml" />
 		<mapping resource="cn/bst/model/Replys.hbm.xml" />
+		<mapping resource="cn/bst/model/CollectinonRelation.hbm.xml" />
+		<mapping resource="cn/bst/model/ReplysAndAccount.hbm.xml" />
 
 	</session-factory>
 

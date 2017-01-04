@@ -2,115 +2,173 @@ package cn.bst.model;
 
 import java.sql.Timestamp;
 
+
 /**
  * Users entity. @author MyEclipse Persistence Tools
  */
 
-public class Users implements java.io.Serializable {
+public class Users  implements java.io.Serializable {
 
-	// Fields
 
-	private Integer id;
-	private String account;
-	private String psw;
-	private Boolean sex;
-	private Integer age;
-	private String tele;
-	private String addr;
-	private String image;
-	private Timestamp logDate;
+    // Fields    
 
-	// Constructors
+     private Integer id;
+     private String account;
+     private String psw;
+     private Integer sex;
+     private Integer age;
+     private String phoneNumber;
+     private String headImage;
+     private Timestamp regTime;
+     private Timestamp lastLoginTime;
+     private String personalCheck;
+     private String email;
+     private Integer likeCount;
+     private Integer shareCount;
 
-	/** default constructor */
-	public Users() {
-	}
 
-	/** full constructor */
-	public Users(String account, String psw, Boolean sex, Integer age, String tele, String addr, String image,
-			Timestamp logDate) {
-		this.account = account;
-		this.psw = psw;
-		this.sex = sex;
-		this.age = age;
-		this.tele = tele;
-		this.addr = addr;
-		this.image = image;
-		this.logDate = logDate;
-	}
+    // Constructors
 
-	// Property accessors
+    /** default constructor */
+    public Users() {
+    }
 
-	public Integer getId() {
-		return this.id;
-	}
+	/** minimal constructor */
+    public Users(String account, String psw, Timestamp regTime) {
+        this.account = account;
+        this.psw = psw;
+        this.regTime = regTime;
+    }
+    
+    /** full constructor */
+    public Users(String account, String psw, Integer sex, Integer age, String phoneNumber, String headImage, Timestamp regTime, Timestamp lastLoginTime, String personalCheck, String email, Integer likeCount, Integer shareCount) {
+        this.account = account;
+        this.psw = psw;
+        this.sex = sex;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.headImage = headImage;
+        this.regTime = regTime;
+        this.lastLoginTime = lastLoginTime;
+        this.personalCheck = personalCheck;
+        this.email = email;
+        this.likeCount = likeCount;
+        this.shareCount = shareCount;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+   
+    // Property accessors
 
-	public String getAccount() {
-		return this.account;
-	}
+    public Integer getId() {
+        return this.id;
+    }
+    
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setAccount(String account) {
-		this.account = account;
-	}
+    public String getAccount() {
+        return this.account;
+    }
+    
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-	public String getPsw() {
-		return this.psw;
-	}
+    public String getPsw() {
+        return this.psw;
+    }
+    
+    public void setPsw(String psw) {
+        this.psw = psw;
+    }
 
-	public void setPsw(String psw) {
-		this.psw = psw;
-	}
+    public Integer getSex() {
+        return this.sex;
+    }
+    
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
 
-	public Boolean getSex() {
-		return this.sex;
-	}
+    public Integer getAge() {
+        return this.age;
+    }
+    
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
-	public void setSex(Boolean sex) {
-		this.sex = sex;
-	}
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+    
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public Integer getAge() {
-		return this.age;
-	}
+    public String getHeadImage() {
+        return this.headImage;
+    }
+    
+    public void setHeadImage(String headImage) {
+        this.headImage = headImage;
+    }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    public Timestamp getRegTime() {
+        return this.regTime;
+    }
+    
+    public void setRegTime(Timestamp regTime) {
+        this.regTime = regTime;
+    }
 
-	public String getTele() {
-		return this.tele;
-	}
+    public Timestamp getLastLoginTime() {
+        return this.lastLoginTime;
+    }
+    
+    public void setLastLoginTime(Timestamp lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
 
-	public void setTele(String tele) {
-		this.tele = tele;
-	}
+    public String getPersonalCheck() {
+        return this.personalCheck;
+    }
+    
+    public void setPersonalCheck(String personalCheck) {
+        this.personalCheck = personalCheck;
+    }
 
-	public String getAddr() {
-		return this.addr;
-	}
+    public String getEmail() {
+        return this.email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
+    public Integer getLikeCount() {
+        return this.likeCount;
+    }
+    
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
 
-	public String getImage() {
-		return this.image;
-	}
+    public Integer getShareCount() {
+        return this.shareCount;
+    }
+    
+    public void setShareCount(Integer shareCount) {
+        this.shareCount = shareCount;
+    }
+   
 
-	public void setImage(String image) {
-		this.image = image;
-	}
 
-	public Timestamp getLogDate() {
-		return this.logDate;
-	}
 
-	public void setLogDate(Timestamp logDate) {
-		this.logDate = logDate;
-	}
+
+
+
+
 
 }
