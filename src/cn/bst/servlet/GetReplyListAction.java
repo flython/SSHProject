@@ -1,4 +1,4 @@
-package cn.bst.action;
+package cn.bst.servlet;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-  <runtime name="9条命的喵咪"/>
+  <runtime name="汤姆家的小喵咪"/>
   <fixed facet="java"/>
   <fixed facet="jst.web"/>
   <fixed facet="wst.jsdt.web"/>
@@ -9,4 +9,5 @@
   <installed facet="jst.web.jstl" version="1.2.1"/>
   <installed facet="wst.jsdt.web" version="1.0"/>
   <installed facet="me.hibernate" version="5.1"/>
+  <installed facet="web.struts2" version="2.1"/>
 </faceted-project>

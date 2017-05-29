@@ -1,6 +1,7 @@
-package cn.bst.action;
+package cn.bst.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,18 +16,18 @@ import cn.bst.utils.GSONUtils;
 import cn.bst.utils.WebDataUtils;
 
 /**
- * Servlet implementation class UpdateUserInfoAction
+ * Servlet implementation class RegisterAction
  */
-@WebServlet("/UpdateUserInfoAction")
-public class UpdateUserInfoAction extends HttpServlet {
+@WebServlet("/RegisterAction")
+public class RegisterAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateUserInfoAction() {
+    public RegisterAction() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
 	/**
@@ -36,12 +37,7 @@ public class UpdateUserInfoAction extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		JSONObject data = new JSONObject();
 		Users user = GSONUtils.fromJson(WebDataUtils.getDataFromRequest(request), Users.class);
-		UserHendle uh = new UserHendle(user);
-		if(!uh.getUser().getHeadImage().endsWith("head.jpg")){
-			uh.updateHeadImage(request.getServletContext().getRealPath("/") + "img\\head");
-		}
-		data.put("msg", uh.updateUser());
-		data.put("data", GSONUtils.toJson(uh.getUser()));
+		data.put("msg", new UserHendle(user).saveAsNewUser());
 		WebDataUtils.sendDataToRespounse(data.toString(), response);
 	}
 
@@ -49,7 +45,7 @@ public class UpdateUserInfoAction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 

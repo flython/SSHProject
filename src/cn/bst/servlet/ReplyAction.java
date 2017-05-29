@@ -1,4 +1,4 @@
-package cn.bst.action;
+package cn.bst.servlet;
 
 import java.io.IOException;
 
@@ -10,34 +10,35 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
-import cn.bst.model.Users;
-import cn.bst.service.UserHendle;
+import cn.bst.model.Replys;
+import cn.bst.service.ReplyHendle;
 import cn.bst.utils.GSONUtils;
 import cn.bst.utils.WebDataUtils;
 
 /**
- * Servlet implementation class RegisterAction
+ * Servlet implementation class ReplyAction
  */
-@WebServlet("/RegisterAction")
-public class RegisterAction extends HttpServlet {
+@WebServlet("/ReplyAction")
+public class ReplyAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterAction() {
+    public ReplyAction() {
         super();
-
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
+		Replys reply = GSONUtils.fromJson(WebDataUtils.getDataFromRequest(request), Replys.class);
 		JSONObject data = new JSONObject();
-		Users user = GSONUtils.fromJson(WebDataUtils.getDataFromRequest(request), Users.class);
-		data.put("msg", new UserHendle(user).saveAsNewUser());
+		data.put("msg", new ReplyHendle(reply).saveAsNewReply());
 		WebDataUtils.sendDataToRespounse(data.toString(), response);
 	}
 
@@ -45,7 +46,7 @@ public class RegisterAction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

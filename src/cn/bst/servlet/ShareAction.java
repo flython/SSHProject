@@ -1,4 +1,4 @@
-package cn.bst.action;
+package cn.bst.servlet;
 
 import java.io.IOException;
 
@@ -34,7 +34,7 @@ public class ShareAction extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//图片上传，使用base64加密图片，然后通过json传输
+		//图片上传，使用base64加密图片，然后�?�过json传输
 		request.setCharacterEncoding("utf-8");
 		Shares share = GSONUtils.fromJson(WebDataUtils.getDataFromRequest(request), Shares.class);
 		JSONObject data = new JSONObject();
