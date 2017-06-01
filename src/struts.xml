@@ -2,9 +2,26 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="default" extends="struts-default">
-	<!-- 用户登录 -->
-		<action name="login" class="cn.bst.action.LoginAction">
-		
+	<!-- 用户相关 -->
+		<action name="login" class="cn.bst.action.LoginAction" method="doLogin">
+			<result name="success">/index.jsp</result>
+			<result name="error">/message.jsp</result>
+		</action>
+		<action name="regist" class="cn.bst.action.LoginAction" method="doRegister">
+			
+		</action>
+	<!-- 发帖子与回复 -->
+		<action name="newArticle" class="cn.bst.action.NewArticleAction" >
+		</action>
+		<action name="getAllArt" class="cn.bst.action.GetArticleListAction">
+		</action>
+		<action name="ArtDetail" class="cn.bst.action.ArticleAction">
+		</action>
+		<action name="getReply" class="cn.bst.action.GetReplyList">
+		</action>
+		<action name="addReply" class="cn.bst.action.NewReplyAction">
 		</action>
 	</package>
+	
 </struts>    
+

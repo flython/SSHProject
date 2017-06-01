@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import cn.bst.model.Shares;
+import cn.bst.model.SharesDAO;
 import cn.bst.utils.HibernateUtils;
 import cn.bst.utils.ImgUtils;
 
@@ -23,6 +24,10 @@ public class ShareHendle {
 		this.share = share;
 		this.share.setShareTime(new Timestamp(System.currentTimeMillis()));
 
+	}
+	
+	public Shares getShareByID(Integer id){
+		return new SharesDAO().findById(id);
 	}
 
 	public boolean saveAsNewShare() {
